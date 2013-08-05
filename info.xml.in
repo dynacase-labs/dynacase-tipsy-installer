@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<module name="dynacase-tipsy-installer" version="@VERSION@" release="@RELEASE@">
+
+    <description>Facebook-style tooltips plugin for jQuery</description>
+
+    <requires>
+        <installer version="1.1.0" comp="ge"/>
+        <module name="dynacase-jquery-installer" version="1.7.2" comp="ge"/>
+    </requires>
+
+    <parameters>
+        <param name="tipsy_url" label="tipsy download URL" type="text"
+               default="http://ftp.dynacase.org/third-party/tipsy-1.0.0.tgz"
+               volatile="yes" onupgrade="W"/>
+    </parameters>
+
+    <pre-install>
+        <check type="syscommand" command="gunzip"/>
+        <check type="syscommand" command="tar"/>
+        <check type="syscommand" command="find"/>
+        <check type="syscommand" command="chmod"/>
+    </pre-install>
+
+    <pre-upgrade>
+        <check type="syscommand" command="gunzip"/>
+        <check type="syscommand" command="tar"/>
+        <check type="syscommand" command="find"/>
+        <check type="syscommand" command="chmod"/>
+    </pre-upgrade>
+
+    <post-install>
+        <download href="@tipsy_url" action="programs/tipsy_install">
+            <label lang="en">Download and install tipsy</label>
+        </download>
+    </post-install>
+
+    <post-upgrade>
+        <download href="@tipsy_url" action="programs/tipsy_install">
+            <label lang="en">Download and install tipsy</label>
+        </download>
+    </post-upgrade>
+
+</module>
