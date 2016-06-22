@@ -4,7 +4,6 @@
  * Install tipsy archive into Dynacase context dir
  *
  * @author Anakeen 2013
- * @license http://www.fsf.org/licensing/licenses/agpl-3.0.html GNU Affero General Public License
  */
 $WIFF_ROOT = getenv("WIFF_ROOT");
 if ($WIFF_ROOT === false) {
